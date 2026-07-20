@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.glossier.com/.well-known/openid-configuration
+docs: https://shopify.dev/docs/api/customer
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+  pkce: S256
+  note: >-
+    Customer-facing authentication is delegated to the Shopify Customer Account
+    authorization server (issuer https://shopify.com/authentication/62791647477,
+    endpoints on account.glossier.com). The storefront's agent-commerce (UCP/MCP)
+    surface is separately gated by a UCP agent-profile identity check.
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://www.glossier.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/62791647477
+  authorization_endpoint: https://account.glossier.com/authentication/oauth/authorize
+  token_endpoint: https://account.glossier.com/authentication/oauth/token
+  end_session_endpoint: https://account.glossier.com/authentication/logout
+  jwks_uri: https://account.glossier.com/authentication/.well-known/jwks.json
+  response_types_supported:
+  - code
+  grant_types_supported:
+  - authorization_code
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:jwt-bearer
+  code_challenge_methods_supported:
+  - S256
+  token_endpoint_auth_methods_supported:
+  - client_secret_basic
+  id_token_signing_alg_values_supported:
+  - RS256
+  sources:
+  - well-known/glossier-openid-configuration.json
+  - well-known/glossier-oauth-authorization-server.json
+- name: UCPAgentProfile
+  type: apiKey
+  scheme: ucp-agent-profile
+  description: The UCP MCP endpoint requires an agent profile URI before enumerating tools.
+  sources:
+  - well-known/glossier-ucp.json
