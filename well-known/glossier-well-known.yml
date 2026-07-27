@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of https://www.glossier.com/.well-known/*
+host: https://www.glossier.com
+documents:
+- path: /.well-known/ucp
+  status: 200
+  file: glossier-ucp.json
+  note: Universal Commerce Protocol merchant profile (Shopify-hosted). Advertises MCP transport, shopping capabilities, and payment handlers.
+- path: /.well-known/openid-configuration
+  status: 200
+  file: glossier-openid-configuration.json
+  note: OIDC discovery for the Shopify Customer Account authorization server (account.glossier.com).
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: glossier-oauth-authorization-server.json
+  note: RFC 8414 authorization-server metadata (identical payload to OIDC discovery).
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+other:
+- path: /llms.txt
+  status: 200
+  file: ../llms/glossier-llms.txt
+  note: Agent instructions (mirror of /agents.md).
+- path: /agents.md
+  status: 200
+  file: glossier-agents.md
+  note: Canonical agent-facing store description.

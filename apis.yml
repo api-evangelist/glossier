@@ -1,8 +1,28 @@
 aid: glossier
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/glossier.png
 name: Glossier
-description: 'Glossier is a company surfaced as a portfolio company of forerunner-ventures, index-ventures,
-  ivp, thrive-capital and added to the API Evangelist network as a stub for enrichment. Sector: consumer.
-  This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Glossier is a direct-to-consumer beauty and personal-care brand (skincare, makeup,
+  body, and fragrance) that sells through its own Shopify-powered storefront at
+  glossier.com. It reached the API Evangelist network as a portfolio company of
+  Forerunner Ventures, Index Ventures, IVP, and Thrive Capital. Glossier does not
+  publish a traditional developer program, but its storefront is agent-native: it
+  implements the Universal Commerce Protocol (UCP) with a live MCP endpoint for
+  agent-driven catalog search, cart, and buyer-approved checkout, publishes /llms.txt
+  and /agents.md agent instructions, and exposes Shopify Customer Account OAuth2/OIDC
+  authentication with a discoverable authorization server.
 url: https://raw.githubusercontent.com/api-evangelist/glossier/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,20 +31,87 @@ x-backed-by:
 - index-ventures
 - ivp
 - thrive-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: agent-commerce-surface-found
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
-apis: []
+- Beauty
+- Cosmetics
+- Ecommerce
+- Retail
+- Agent Commerce
+- Universal Commerce Protocol
+- Shopify
+- MCP
+apis:
+- name: Glossier Agent Commerce (UCP / MCP)
+  description: >-
+    Agent-facing commerce surface for the Glossier storefront implementing the
+    Universal Commerce Protocol over MCP: catalog search, cart, checkout, and
+    fulfillment with a buyer-approval invariant on payment. Tool schemas are
+    gated behind a UCP agent-profile identity check.
+  humanURL: https://www.glossier.com/llms.txt
+  baseURL: https://glossier-admin.myshopify.com/api/ucp/mcp
+  tags:
+  - Agent Commerce
+  - MCP
+  - Universal Commerce Protocol
+  - Ecommerce
+  properties:
+  - type: MCPServer
+    url: mcp/glossier-mcp.yml
+  - type: LLMsTxt
+    url: llms/glossier-llms.txt
+  - type: WellKnown
+    url: well-known/glossier-well-known.yml
+  - type: Authentication
+    url: authentication/glossier-authentication.yml
+  - type: OAuthScopes
+    url: scopes/glossier-scopes.yml
+  - type: Conformance
+    url: conformance/glossier-conformance.yml
+  - type: Conventions
+    url: conventions/glossier-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/glossier-mcp.yml
+- type: LLMsTxt
+  url: llms/glossier-llms.txt
+- type: WellKnown
+  url: well-known/glossier-well-known.yml
+- type: Authentication
+  url: authentication/glossier-authentication.yml
+- type: OAuthScopes
+  url: scopes/glossier-scopes.yml
+- type: Conformance
+  url: conformance/glossier-conformance.yml
+- type: Conventions
+  url: conventions/glossier-conventions.yml
+- type: VulnerabilityDisclosure
+  url: security/glossier-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.glossier.com/pages/responsible-disclosure
+- type: DomainSecurity
+  url: security/glossier-domain-security.yml
+- type: Documentation
+  url: https://ucp.dev/2026-04-08/specification/overview/
+- type: PrivacyPolicy
+  url: https://www.glossier.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://www.glossier.com/policies/terms-of-service
 - type: Website
   url: https://www.glossier.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

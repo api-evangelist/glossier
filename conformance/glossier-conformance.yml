@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.glossier.com/.well-known/openid-configuration; https://www.glossier.com/.well-known/ucp
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 8414 authorization-server metadata published at /.well-known/oauth-authorization-server (authorization_code + refresh_token grants).
+- id: oidc
+  conforms: true
+  evidence: OpenID Provider discovery published at /.well-known/openid-configuration (issuer, jwks_uri, id_token RS256).
+- id: pkce-rfc7636
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: rfc8414-oauth-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns full AS metadata.
+- id: ucp-2026-04-08
+  conforms: true
+  evidence: /.well-known/ucp advertises Universal Commerce Protocol version 2026-04-08 with shopping capabilities and MCP transport.
+- id: mcp
+  conforms: true
+  evidence: UCP shopping service exposes an MCP (JSON-RPC 2.0) transport endpoint.
+- id: rfc9457-problem-details
+  conforms: false
+- id: fhir-r4
+  conforms: false

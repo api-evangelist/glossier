@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://www.glossier.com/.well-known/ucp
+description: >-
+  Glossier's Shopify storefront exposes a live agent-commerce MCP endpoint via the
+  Universal Commerce Protocol (UCP). The endpoint enumerates its tool schemas only
+  after an agent supplies a valid UCP agent profile URI (identity gate); the flow
+  and tool surface below are documented verbatim in the store's published /llms.txt
+  and /agents.md.
+server:
+  name: glossier-ucp-shopping
+  transport: http
+  protocol: mcp
+  url: https://glossier-admin.myshopify.com/api/ucp/mcp
+  alias_url: https://www.glossier.com/api/ucp/mcp
+  discovery: https://www.glossier.com/.well-known/ucp
+  spec: https://ucp.dev/2026-04-08/specification/overview/
+  schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+  supported_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  auth:
+    scheme: ucp-agent-profile
+    note: tools/list requires an agent profile URI; anonymous calls return JSON-RPC error -32001 (UCP discovery failed).
+rules:
+- Checkout requires contemporaneous human buyer approval; agents must not complete payment without explicit buyer consent.
+- The endpoint is rate-limited per IP; back off on HTTP 429.
+- Pass context.address_country and context.currency for accurate pricing and availability.
+tools:
+- name: search_catalog
+  description: Find products matching the buyer's intent.
+  capability: dev.ucp.shopping.catalog.search
+- name: create_cart
+  description: Create a cart and add desired items.
+  capability: dev.ucp.shopping.cart
+- name: create_checkout
+  description: Start the purchase flow from a cart.
+  capability: dev.ucp.shopping.checkout
+- name: update_checkout
+  description: Set shipping address and fulfillment method on a checkout.
+  capability: dev.ucp.shopping.fulfillment
+- name: complete_checkout
+  description: Finalize the purchase (buyer must approve payment).
+  capability: dev.ucp.shopping.checkout
+payment_handlers:
+- com.google.pay
+- dev.shopify.card
+- dev.shopify.shop_pay
