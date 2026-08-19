@@ -2,12 +2,10 @@ generated: '2026-07-19'
 method: searched
 status: published
 source: https://www.glossier.com/.well-known/ucp
-description: >-
-  Glossier's Shopify storefront exposes a live agent-commerce MCP endpoint via the
-  Universal Commerce Protocol (UCP). The endpoint enumerates its tool schemas only
-  after an agent supplies a valid UCP agent profile URI (identity gate); the flow
-  and tool surface below are documented verbatim in the store's published /llms.txt
-  and /agents.md.
+description: Glossier's Shopify storefront exposes a live agent-commerce MCP endpoint via the Universal
+  Commerce Protocol (UCP). The endpoint enumerates its tool schemas only after an agent supplies a valid
+  UCP agent profile URI (identity gate); the flow and tool surface below are documented verbatim in the
+  store's published /llms.txt and /agents.md.
 server:
   name: glossier-ucp-shopping
   transport: http
@@ -22,9 +20,11 @@ server:
   - '2026-01-23'
   auth:
     scheme: ucp-agent-profile
-    note: tools/list requires an agent profile URI; anonymous calls return JSON-RPC error -32001 (UCP discovery failed).
+    note: tools/list requires an agent profile URI; anonymous calls return JSON-RPC error -32001 (UCP
+      discovery failed).
 rules:
-- Checkout requires contemporaneous human buyer approval; agents must not complete payment without explicit buyer consent.
+- Checkout requires contemporaneous human buyer approval; agents must not complete payment without explicit
+  buyer consent.
 - The endpoint is rate-limited per IP; back off on HTTP 429.
 - Pass context.address_country and context.currency for accurate pricing and availability.
 tools:
@@ -47,3 +47,11 @@ payment_handlers:
 - com.google.pay
 - dev.shopify.card
 - dev.shopify.shop_pay
+deployment:
+  mode: remote
+  endpoint: https://glossier-admin.myshopify.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
