@@ -54,7 +54,7 @@ tags:
 - Cosmetics
 - E-Commerce
 - Retail
-- Agent Commerce
+- Agentic Commerce
 - Universal Commerce Protocol
 - Shopify
 - MCP
@@ -79,7 +79,7 @@ apis:
   humanURL: https://www.glossier.com/llms.txt
   baseURL: https://glossier-admin.myshopify.com/api/ucp/mcp
   tags:
-  - Agent Commerce
+  - Agentic Commerce
   - MCP
   - Universal Commerce Protocol
   - E-Commerce
