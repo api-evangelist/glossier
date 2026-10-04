@@ -47,6 +47,9 @@ x-tier-reason: agent-commerce-surface-found
 specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
+x-docs-platform: mkdocs
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
 - Company
 - Consumer
@@ -103,6 +106,9 @@ apis:
     url: conformance/glossier-conformance.yml
   - type: Conventions
     url: conventions/glossier-conventions.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
