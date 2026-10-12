@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/glossier/integrations
+- https://n8n.io/integrations/glossier/
+- https://composio.dev/toolkits/glossier
+- https://monid.ai/tools/glossier
+checked:
+- https://composio.dev/toolkits/glossier
+- https://monid.ai/tools/glossier
+- https://n8n.io/integrations/glossier/
+- https://zapier.com/apps/glossier/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
