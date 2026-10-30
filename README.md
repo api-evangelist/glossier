@@ -64,6 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Glossier is a company surfaced as a portfolio company of forerunner-ventures, index-ventures, ivp, thrive-capital and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Glossier is a direct-to-consumer beauty and personal-care brand (skincare, makeup, body, and fragrance) that sells through its own Shopify-powered storefront at glossier.com. It reached the API Evangelist network as a portfolio company of Forerunner Ventures, Index Ventures, IVP, and Thrive Capital. Glossier does not publish a traditional developer program, but its storefront is agent-native: it implements the Universal Commerce Protocol (UCP) with a live MCP endpoint for agent-driven catalog search, cart, and buyer-approved checkout, publishes /llms.txt and /agents.md agent instructions, and exposes Shopify Customer Account OAuth2/OIDC authentication with a discoverable authorization server.
 
-Backed by: forerunner-ventures, index-ventures, ivp, thrive-capital — https://www.glossier.com
+**Areas:** Company · Consumer · Beauty · Cosmetics · E-Commerce · Retail · Agentic Commerce · Universal Commerce Protocol · Shopify · MCP
+
+## Glossier on APIs.io
+
+Everything profiled for Glossier is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/glossier/](https://apis.io/providers/glossier/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Glossier Agent Commerce (UCP / MCP)](https://apis.io/apis/glossier/glossier-agent-commerce-ucp-mcp/) — Agent-facing commerce surface for the Glossier storefront implementing the Universal Commerce Protocol over MCP: catalog search, cart, checkout, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [glossier-ucp-shopping](https://apis.io/servers/glossier/glossier-ucp-shopping/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Glossier Authentication](https://apis.io/security/glossier/glossier-authentication/)
+- [Glossier Domain Security](https://apis.io/security/glossier/glossier-domain-security/)
+- [Glossier Vulnerability Disclosure](https://apis.io/security/glossier/glossier-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Glossier Scopes](https://apis.io/scopes/glossier/glossier-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.glossier.com)
+- [Documentation](https://ucp.dev/2026-04-08/specification/overview/)
+- [Security](https://www.glossier.com/pages/responsible-disclosure)
+- [Terms of service](https://www.glossier.com/policies/terms-of-service)
+- [Privacy policy](https://www.glossier.com/policies/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 23.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 21.1 |
+
+**Agent readiness 13.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | platform (partial credit) |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/glossier/](https://apis.io/providers/glossier/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Glossier: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/glossier/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
